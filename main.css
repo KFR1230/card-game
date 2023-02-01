@@ -1,0 +1,122 @@
+/* 容器 */
+#cards {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* 卡片 */
+.card {
+  border: 2px solid rgb(83, 80, 79);
+  flex: 7% 1 1;
+  height: 8vw;
+  margin: 2px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.card img {
+  max-width: 30%;
+  align-self: center;
+}
+
+.card p {
+  font-size: 10px;
+  margin: 3px;
+  /* 因為網頁會預設margin值，所以初始會超出broder */
+}
+
+.card p:last-child {
+  transform: rotate(180deg);
+}
+
+.back {
+  background: url("https://s.yimg.com/ny/api/res/1.2/iVP5z1E24BaGfeu_.lXmTQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtoPTc3NjtjZj13ZWJw/https://media.zenfs.com/ko/setn.com.tw/07a8979985c480438f651e0cc1f4ffa3");
+  background-size: cover;
+  filter: brightness(85%);
+}
+
+.paired {
+  background-color: #e0e0e0;
+}
+
+#header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 95%;
+  margin: 0;
+}
+
+#header .title {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#header .title h2 {
+  padding-left: 0.5em;
+}
+
+#header .title img {
+  max-width: 3em;
+}
+
+#header .score {
+  margin: 0;
+  color: #6c90ac;
+}
+
+#header .tried {
+  margin-top: 0;
+}
+
+.wrong {
+  animation-name: wrongAnimation;
+  animation-duration: 0.2s;
+  animation-iteration-count: 5;
+}
+
+@keyframes wrongAnimation {
+  to {
+    border: 2px solid red;
+  }
+}
+
+.completed {
+  position: absolute;
+  z-index: 999;
+  top: 33vh;
+  background-color: RGBA(232, 246, 254, 0.8);
+  width: 100vw;
+  padding: 50px 0;
+}
+
+.completed>p {
+  font-size: 1.5em;
+  color: black;
+  text-align: center;
+  margin: 0;
+}
+
+.completed>p:first-child {
+  font-size: 3em;
+  font-weight: 700;
+  color: #758d9a;
+}
+
+.reset {
+  animation-name: oneMoreTime;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+
+@keyframes oneMoreTime {
+  to {
+    color: rgb(35, 132, 192);
+  }
+}
